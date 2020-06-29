@@ -1,12 +1,8 @@
 from bs4 import BeautifulSoup
 import requests
 
-contest_url = "https://codeforces.com/contest/1374"
-urls = []
-url = "https://codeforces.com/contest/1374/problem/B"
 
-
-def problem_page_scrapper():
+def problem_page_scrapper(url):
     raw_data = requests.get(url).text
 
     formatted_data = BeautifulSoup(raw_data, "html5lib")
@@ -36,23 +32,27 @@ def problem_page_scrapper():
         print()
 
 
-def contest_page_scrapper():
+def contest_page_scrapper(contest_url):
     raw_data = requests.get(contest_url).text
 
     formatted_data = BeautifulSoup(raw_data, "html5lib")
 
     contest_table = formatted_data.find('table', class_="problems")
-
+    urls = []
     for row in contest_table.find_all('tr'):
         if(row.find_all('td').__len__() != 0):
             urls.append("https://codeforces.com/"+row.td.a.get('href'))
             print("url   ", end=" ")
             print(urls[urls.__len__() - 1], end=" ")
             print("    added")
+    print()
+    for url in urls:
+        problem_page_scrapper(url)
 
 
 if __name__ == "__main__":
-    contest_page_scrapper()
-    print()
-    for url in urls:
-        problem_page_scrapper()
+    contest_url = "https://codeforces.com/contest/1374"
+    contest_page_scrapper(contest_url)
+
+    # url = "https://codeforces.com/contest/1374/problem/B"
+    # problem_page_scrapper(url)
