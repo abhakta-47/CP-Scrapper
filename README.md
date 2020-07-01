@@ -38,3 +38,4 @@ Python script to scrap input output from problems of Codeforces Contest <br/>
 - **_source_location.txt :_** in here put full path where sourc .cpp will be collected for testing, file names should be problem code name ( eg.A.cpp, B.cpp etc)
 
 - then run main.py
+- result should be saved in runtime/report.html open with browser to see results
