@@ -1,7 +1,8 @@
 cp-scrap-env/
-*.txt
-.vscode/
+
 cp-scrap-win/
-tst.exe
-tst.py
+.vscode/
 windows.py
+__pycache__
+meta_data.json
+runtime/

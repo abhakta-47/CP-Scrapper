@@ -1,0 +1,4 @@
+1. scrap data 
+2. use input as stdin
+3. collect output
+4. build report
