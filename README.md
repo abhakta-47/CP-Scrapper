@@ -41,9 +41,12 @@ Python script to scrap input output from problems of Codeforces Contest <br/>
 in here put full path where sourc .cpp will be collected for testing, file names should be problem code name ( eg.A.cpp, B.cpp etc)
 
 **3. then run main.py**<br>
+
 **4. wait for _input :_ propmt**<br>
+
 **5. in the prompt enter problem code you want to check**<br>
 let you entered A, then A.cpp will be collected from the dir specified in source_location.txt, compiled and run against test cases of problem code A.<br>
+
 **6. result should be saved in runtime/report.html. Open with browser to see results.**
 <br><br>
 Most importantly<br>

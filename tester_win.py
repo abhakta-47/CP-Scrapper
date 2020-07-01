@@ -1,8 +1,7 @@
 import os
 import json
 
-meta_data = open('meta_data.json', 'r')
-meta_data = json.load(meta_data)
+
 # print(type(meta_data))
 
 
@@ -29,7 +28,8 @@ class tester:
 
     def tester(self, problem_id):
         print("testing "+problem_id+".....\n")
-
+        meta_data = open('meta_data.json', 'r')
+        meta_data = json.load(meta_data)
         n_tests = meta_data[problem_id]
         k = 1
         found = True
