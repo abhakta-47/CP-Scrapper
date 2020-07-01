@@ -21,9 +21,7 @@ Python script to scrap input output from problems of Codeforces Contest <br/>
 ```
  {
   "contest_url": "https://codeforces.com/contest/1374",
-  "problem_url": "",
-  "platform": "",
-  "path": ""
+  "problem_url": ""
  }
 ```
 
@@ -33,10 +31,10 @@ Python script to scrap input output from problems of Codeforces Contest <br/>
 ```
  {
   "contest_url": "",
-  "problem_url": "https://codeforces.com/contest/1374/problem/B",
-  "platform": "",
-  "path": ""
+  "problem_url": "https://codeforces.com/contest/1374/problem/B"
  }
 ```
 
-- **_source_location.txt :_** in here put full path where sourc .cpp will be collected for testing, file names should be problem code naem ( eg.A.cpp, B.cpp etc)
+- **_source_location.txt :_** in here put full path where sourc .cpp will be collected for testing, file names should be problem code name ( eg.A.cpp, B.cpp etc)
+
+- then run main.py
