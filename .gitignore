@@ -1,8 +1,8 @@
-cp-scrap-env/
-
-cp-scrap-win/
+cp_scrapper_env/
 .vscode/
-windows.py
-__pycache__
+__pycache__/
 meta_data.json
 runtime/
+settings.json
+source_location.txt
+tst.py

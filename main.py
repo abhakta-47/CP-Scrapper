@@ -1,7 +1,8 @@
 import scrapper
-import tester_win
+import tester
 import json
 import os
+import platform
 
 settingsjson = open('settings.json', 'r')
 settings = json.load(settingsjson)
@@ -32,7 +33,7 @@ else:
     scrapper.problem_page_scrapper(problem_url)
 
 user_input = ''
-tester = tester_win.tester(path)
+tester = tester.tester(path)
 while True:
     user_input = input("input : ")
     if user_input == 'exit':
@@ -40,6 +41,9 @@ while True:
     try:
         if(os.listdir().count('your_output_temp.txt')) != 0:
             os.remove('your_output_temp.txt')
-        tester.tester(user_input)
+        if platform.system() == 'Linux':
+            tester.tester_linux(user_input)
+        else:
+            tester.tester(user_input)
     finally:
         continue

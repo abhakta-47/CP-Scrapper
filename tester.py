@@ -58,6 +58,40 @@ class tester:
         else:
             print(" *.cpp not found")
 
+    def tester_linux(self, problem_id):
+        print("testing "+problem_id+".....\n")
+        meta_data = open('meta_data.json', 'r')
+        meta_data = json.load(meta_data)
+        n_tests = meta_data[problem_id]
+        k = 1
+        found = True
+        for files in os.walk(self.path):
+            print(files[2])
+            if(files[2].count(problem_id+'.cpp') == 0):
+                found = False
+            break
+        # print(" found?  " + str(found))
+
+        if found:
+            os.system("g++ "+self.path+"/"+problem_id +
+                      ".cpp -o "+problem_id+".out")
+
+            while k <= n_tests:
+                print("test case #" + str(k) + ": ")
+                # print("echo test case #" + str(k) +
+                #       ": >>  your_output_temp.txt")
+                os.system("echo 'test case #" + str(k) +
+                          ":' >>  your_output_temp.txt")
+                in_file = problem_id+"_in_"+str(k)+".txt | "
+                (os.system("cat inputs/"+in_file + " ./" +
+                           problem_id+".out >> your_output_temp.txt"))
+                # print(test_result)
+                k = k+1
+                print()
+            self.build_report(problem_id)
+        else:
+            print(" *.cpp not found")
+
 
 if __name__ == "__main__":
     with open('source_location.txt', 'r') as src_:
@@ -72,6 +106,6 @@ if __name__ == "__main__":
         try:
             if(os.listdir().count('your_output_temp.txt')) != 0:
                 os.remove('your_output_temp.txt')
-            tester_.tester(user_input)
+            tester_.tester_linux(user_input)
         finally:
             continue

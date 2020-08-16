@@ -1,9 +1,11 @@
+#!/mnt/d/projects/Ubuntu20/CP-Scrapper/cp_scrapper_env python3
+
 from bs4 import BeautifulSoup
 import requests
 import json
 import os
 
-folder_addr = "/mnt/c/Users/ARNAB BHAKTA/Documents/cs/cp/codeforces/challanges/"
+folder_addr = "/mnt/d/projects/Ubuntu20/CompetitiveCodingMyPractices/codeforces/challanges"
 
 
 class scrapper:
