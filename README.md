@@ -38,7 +38,18 @@ Python script to scrap input output from problems of Codeforces Contest <br/>
 ```
 
 **2. source_location.txt :**
-in here put full path where sourc .cpp will be collected for testing, file names should be problem code name ( eg.A.cpp, B.cpp etc)
+in here put full path where sourc .cpp will be collected for testing, file names should be problem code name ( eg.A.cpp, B.cpp etc) e.g.<br>
+(for Linux)
+
+```
+~/projects/CompetitiveCodingMyPractices/codeforces/practice/div3 661
+```
+
+(for Windows)
+
+```
+C:\Users\ARNAB BHAKTA\Documents\cs\CP\codeforces\challanges\div2 654
+```
 
 **3. then run main.py**<br>
 

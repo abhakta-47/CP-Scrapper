@@ -1,4 +1,5 @@
 import os
+import platform
 import json
 
 
@@ -7,7 +8,17 @@ import json
 
 class tester:
     def __init__(self, path):
-        self.path = path
+        new_path = ""
+        if platform.system() == 'Linux':
+            for word in path.split('/'):
+                if len(word.split()) == 2:
+                    new_path += ("'"+word+"'/")
+                else:
+                    new_path += (word+"/")
+        else:
+            new_path = path
+
+        self.path = new_path
 
     def build_report(self, problem_id):
 
